@@ -1,0 +1,49 @@
+
+1)	What is good and bad about RAM as storage for the operating system and data? – 2pts
+The benefits of using RAM as storage are that it is rewritable and can be written to and read from very quickly. However, since RAM is volatile memory, its contents are erased once it loses power, making it unusable for long-term storage.
+
+2)	As you increase the number of processors by N, is the speedup ratio also N? Why or why not? – 2pts
+The speedup ratio is less than N because more processors require more overhead. Overhead refers to the fact that some processing power and time must be devoted to managing the processors and getting them to cooperate efficiently.
+
+3)	What could you use a cluster for? – 1pt
+A clustered system uses two or more loosely-coupled processor systems to create a redundancy, which means that the system will continue to work even if a processor fails. A cluster could be used for services that require heavy processing power and high-availability, such as web servers, file servers, and databases.
+
+4)	Where would you store a small amount of data, say a 32 bit integer – on the heap or stack? Why? – 1pt
+You would store a 32-bit integer on the stack, which provides fast access for small amounts of data such as local variables and function parameters. Although you could store it on the heap as a dynamically allocated variable, it would be slow to access and more difficult to manage, since you would have to allocate and deallocate it.
+
+5)	Where would you store a large data structure (32MB+) on the heap or stack? Why? – 1pt
+Since the stack is very simple and limited in size, a large data structure should be stored on the heap, which has a much larger bank of memory and can track more complex data structures such as classes and arrays by using pointers.
+
+6)	Please fill in the blanks that describe the migration of integer A from disk to register (hint-pg 28): - 1pt
+A: Main memory: A large store of Random Access Memory that holds the instructions and data of currently running programs. 
+B: Cache: A faster but smaller storage system that holds a copy of recently-used information.
+C: Hardware register: A high-speed cache that holds information based on directions given by a program or compiler.
+
+7)	Please write an application (language of your choice but they MUST use system calls) that moves a file (ie implements mv command) in the platform of your choice (Windows or Linux).
+Hint 1: I have an example of the cp command that uses system calls in C/C++ for Windows and Linux
+Hint 2: unlink for Linux (http://linux.die.net/man/2/unlink ) and DeleteFile (http://msdn.microsoft.com/en-us/library/windows/desktop/aa363915(v=vs.85).aspx ) for Windows. – 3pts
+
+See attached Visual C++ project “mv”
+
+8)	Please write an API that wraps the code for the cp command such that the function has a prototype of: - 3pts
+void cp(const char * src, const char * dst)
+Hint 1: It’s simpler than you think
+Hint 2: Look at the sample code
+
+See attached Visual C++ project “cp”
+
+9)	What benefits are there to a micro-kernel? What benefits are there to a monolithic kernel? Which would you use and why? -2pts
+A micro-kernel reduces the size of the kernel by creating system programs to handle functionality, such as interacting with device drivers and interfaces. The benefits of using a micro-kernel are that it is more scalable, portable, manageable, secure, and reliable than a monolithic kernel. Since a monolithic kernel controls all the functionality of the system, the only benefit to using one is that there is almost no overhead inside the kernel.
+
+10)	At what level ring/layer allows full unrestricted access to the hardware? – 1pt
+Programs at ring/layer 0, where the kernel resides, are entrusted with full, unrestricted access to the computer's hardware. Rings 1 and 2, where the device drivers reside, can only access the hardware by going through the kernel.
+
+11)	Name 3 tools from either Windows or Linux that allow you to inspect system information and state what information they show. – 2pts
+
+Three tools that allow users to inspect system information in Windows are the System Control Panel, the Computer Management utility, and the systeminfo.exe command line utility. The System Control Panel shows basic information such as the system's Windows edition, model, experience index rating, processor, RAM, system type, and product ID. If you want to view very detailed overviews of system tools such as the task scheduler, event viewer, shared folders, performance monitor, device manager, and disk manager, use the Computer Management utility. Finally, System Info lists details such as the OS version, product ID, system type, processor, BIOS version, memory stats, hotfixes, and network cards.
+
+Extra credit:
+1)	In class we discussed two modern ways that people interact with the operating system (CLI/Shell and GUI). Today we interact with these interfaces, usually, with a keyboard and mouse. What other way(s) could one interact with the operating system? (Hint: It’s currently being researched/developed and Microsoft has their own concept(s):
+http://www.youtube.com/watch?v=a6cNdhOKwi0 ) – 2pts
+
+In addition to using the mouse and keyboard, modern developers are creating many alternative methods of interacting with the operating system. Smartphones have touchscreens that respond to finger taps and swipes, as well as tilting, rotating, and shaking the device. Computers can also get input from game controllers, tablets, and voice commands. Some special hardware, such as gesture recognizers, sip-n-puff wands, and eye-movement detectors, have also been created to help users with physical disabilities. New technologies like Google Glass also utilize eye-movement trackers and a gyroscope that detects head tilting.
